@@ -33,7 +33,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item menu-open">
+               @if (auth()->user()->level == "admin")
+               <li class="nav-item menu-close">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-user-cog"></i>
                   <p>
@@ -50,7 +51,17 @@
                   </li>
                 </ul>
               </li>
-          <li class="nav-item menu-open">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fas fa-list-ul py-2"></i>
+                    <p>
+                      List Laporan
+                    </p>
+                  </a>
+                </li>
+                @endif
+          @if (auth()->user()->level == "pengguna")
+          <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-cart-arrow-down"></i>
               <p>
@@ -79,9 +90,9 @@
               </li>
             </ul>
           </li>
-        
+          @endif
           <li class="nav-item">
-            <a href="#" class="nav-link">
+          <a href="{{route('logout')}}" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt py-2"></i>
               <p>
                 Log-out
