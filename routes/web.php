@@ -11,9 +11,13 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class,'halamanlogin'])->name('login');
 Route::post('/postlogin', [LoginController::class,'postLogin'])->name('postlogin');
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+
 
 Route::group(['middleware' => ['auth','ceklevel:admin,pengguna']], function () {
     Route::get('/home', [HomeController::class,'index'])->name('home');
+    Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+});
+Route::group(['middleware' => ['auth','ceklevel:pengguna']], function () {
+
 });
 

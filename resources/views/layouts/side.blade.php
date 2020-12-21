@@ -71,12 +71,6 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="fas fa-cart-plus nav-icon"></i>
-                  <p>Input Product</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
                   <i class="fas fa-table nav-icon"></i>
                   <p>Data Product</p>
                 </a>
