@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>AdminLTE 3 | Starter</title>
+<title>Inventory</title>
 @include('layouts.header')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -28,6 +28,9 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+
+          {{-- isi conten disini --}}
+
         </div>
       </div>
     </div>
