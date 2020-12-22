@@ -69,14 +69,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item"> 
+                <a href="{{route('listproduct')}}" class="nav-link">
                   <i class="fas fa-table nav-icon"></i>
                   <p>Data Product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('laporan')}}" class="nav-link">
                   <i class="far fa-file-pdf nav-icon"></i>
                   <p>Buat Laporan</p>
                 </a>
