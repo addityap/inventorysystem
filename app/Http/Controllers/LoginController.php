@@ -18,10 +18,11 @@ class LoginController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('/home');
         }
-        return redirect('/login');
+        session()->flash('fail', 'Email atau Password Salah!');
+        return back();
     }
     public function logout(){
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 }

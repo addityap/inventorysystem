@@ -31,6 +31,7 @@
               <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#formtambah">
                 TAMBAH PRODUCT
               </button>
+              @include('productalert.alert')
               <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -41,20 +42,29 @@
                  <th>QUANTITY PRODUCT</th>
                  <th>STATUS</th>
                  <th>Created At</th>
+                 <th></th>
                   </thead>
                   <tbody>
                     <?php $i = 1; ?>
                     @foreach ($product as $p)
-                        
-
                  <td>{{$i++}}</td>
                  <td>{{$p->kodeproduct}}</td>
                  <td>{{$p->namaproduct}}</td>
                  <td>{{$p->kategoriproduct}}</td>
                  <td>{{$p->quantityproduct}}</td>
-                 <td> <span class="badge bg-warning text-dark">{{$p->status->statuspr}}</span></td>
+                 <td> 
+                  @if($p->status_id == "1")
+                  <span class="badge bg-warning text-dark">{{$p->status->statuspr}}</span>
+                  @elseif($p->status_id != "1")
+                  <span class="badge bg-success text-dark">{{$p->status->statuspr}}</span>
+                  @endif
+                </td>
                  <td>{{$p->created_at}}</td>
-                 </tbody>
+                 <td>
+                  <a href="/edit/{{$p->id}}" class="badge bg-primary bg-gradient">Edit</a>
+
+                 </td>
+                 </tbody> 
                  @endforeach
                 </table>
               </div>
@@ -76,7 +86,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="#">
+                <form method="post" action="{{route('storedata')}}">
+                  @csrf
                     <div class="form-group">
                         <label for="nama">NAMA PRODUCT</label>
                         <input type="text" class="form-control" id="namaproduct" name="namaproduct" required="1" autocomplete="0">

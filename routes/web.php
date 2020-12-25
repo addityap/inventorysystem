@@ -8,11 +8,10 @@ use App\Http\Controllers\productController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/login', [LoginController::class,'halamanlogin'])->name('login');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [LoginController::class,'halamanlogin'])->name('login');
 Route::post('/postlogin', [LoginController::class,'postLogin'])->name('postlogin');
 
 
@@ -24,6 +23,7 @@ Route::group(['middleware' => ['auth','ceklevel:admin,pengguna']], function () {
 Route::group(['middleware' => ['auth','ceklevel:pengguna']], function () {
     Route::get('/listdata',[productController::class,'listProduct'])->name('listproduct');
     Route::get('/laporan',[productController::class,'laporan'])->name('laporan');
+    Route::post('/storedata',[productController::class,'store'])->name('storedata');
     
 }); 
 
