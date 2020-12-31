@@ -5,8 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\productController;
-
-
+use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -26,4 +25,11 @@ Route::group(['middleware' => ['auth','ceklevel:pengguna']], function () {
     Route::post('/storedata',[productController::class,'store'])->name('storedata');
     
 }); 
+
+Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
+    Route::get('/listuser',[UserController::class,'listuser'])->name('listuser');
+    Route::get('detailuser/{user:id}',[UserController::class,'show']);
+    Route::post('/storeuser',[UserController::class,'store'])->name('storeuser');
+
+});
 

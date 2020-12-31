@@ -16,8 +16,9 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">SELAMAT DATANG PRODUCT</h1>
+          <div class="col-sm-8">
+            <h1 class="m-0">INVENTORY - PRODUCT MASUK</h1>
+            <hr>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -93,7 +94,7 @@
                         <input type="text" class="form-control" id="namaproduct" name="namaproduct" required="1" autocomplete="0">
                     </div>
                     <div class="form-group">
-                        <label for="nim">KATEGORI PRODUCT</label>
+                        <label for="catproduct">KATEGORI PRODUCT</label>
                         <select class="form-control" id="catproduct" name="catproduct">
                           {{-- looping disini --}}
                           @foreach ($kategori as $catw)
