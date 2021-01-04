@@ -50,6 +50,29 @@
                   </li>
                 </ul>
               </li>
+              <li class="nav-item menu-close">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-industry"></i>
+                  <p>
+                    Product
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('addkategori')}}" class="nav-link">
+                      <i class="fas fa-cart-plus nav-icon"></i>
+                      <p>Add a Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item"> 
+                    <a href="{{route('konfproduct')}}" class="nav-link">
+                      <i class="fas fa-table nav-icon"></i>
+                      <p>Konfirmasi Product</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
               <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class="nav-icon fas fa-list-ul py-2"></i>

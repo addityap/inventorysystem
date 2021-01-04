@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KategoriController;
@@ -30,6 +31,11 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('/listuser',[UserController::class,'listuser'])->name('listuser');
     Route::get('detailuser/{user:id}',[UserController::class,'show']);
     Route::post('/storeuser',[UserController::class,'store'])->name('storeuser');
+    Route::get('/addkategori',[AdminController::class,'create'])->name('addkategori');
+    Route::post('/storecate',[AdminController::class,'store'])->name('storecate');
+    Route::get('/listdatas',[productController::class,'konfProduct'])->name('konfproduct');
+    Route::get('/approved/{id}',[productController::class,'approved']);
+
 
 });
 
